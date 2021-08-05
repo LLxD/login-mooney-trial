@@ -26,7 +26,7 @@ class Input extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(60),
+      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 10),
       child: Form(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
