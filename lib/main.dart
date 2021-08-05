@@ -37,6 +37,9 @@ class Input extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: label,
                 prefixIcon: icon,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
               ),
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
@@ -62,16 +65,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool _isLogged = false;
 
-  void _incrementCounter() {
+  void _checkLogin() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      _isLogged = !_isLogged;
     });
   }
 
