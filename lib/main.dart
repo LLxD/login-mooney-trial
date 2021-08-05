@@ -19,9 +19,11 @@ class MyApp extends StatelessWidget {
 }
 
 class Input extends StatelessWidget {
-  const Input({required this.label, Key? key}) : super(key: key);
+  const Input({required this.label, required this.icon, Key? key})
+      : super(key: key);
 
   final String label;
+  final Icon icon;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class Input extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(
                 hintText: label,
-                prefixIcon: Icon(Icons.person),
+                prefixIcon: icon,
               ),
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
@@ -85,15 +87,19 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Input(
               label: "Username",
+              icon: Icon(Icons.person),
             ),
             Input(
               label: "Email",
+              icon: Icon(Icons.mail),
             ),
             Input(
               label: "Password",
+              icon: Icon(Icons.vpn_key),
             ),
             Input(
               label: "Confirm Password",
+              icon: Icon(Icons.check),
             ),
             OutlinedButton(
               onPressed: () {
