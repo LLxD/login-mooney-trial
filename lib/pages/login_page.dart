@@ -36,17 +36,28 @@ class LoginPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: InkWell(
-                child: Text(
-                  "Crie sua conta",
-                  style: TextStyle(color: Colors.orange),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Não tem uma conta?"),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: InkWell(
+                        child: Text(
+                          "Crie sua conta",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterPage(
+                                      title: "Cadastro - Mooney",
+                                    ))),
+                      ),
+                    )
+                  ],
                 ),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RegisterPage(
-                              title: "Cadastro - Mooney",
-                            ))),
               ),
             )
           ],
