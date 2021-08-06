@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       home: LoginPage(
-        title: "Ola!",
+        title: "Login - Mooney",
       ),
     );
   }

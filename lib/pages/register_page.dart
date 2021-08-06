@@ -36,7 +36,7 @@ class RegisterPage extends StatelessWidget {
               icon: Icon(Icons.check),
               obscured: true,
             ),
-            OutlinedButton(
+            ElevatedButton(
               onPressed: () {
                 print('Received click');
               },

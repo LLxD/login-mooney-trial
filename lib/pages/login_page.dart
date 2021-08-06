@@ -11,10 +11,12 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.people),
         title: Text(title),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Input(
               label: "Username",
@@ -23,18 +25,29 @@ class LoginPage extends StatelessWidget {
             ),
             Input(
               label: "Password",
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.vpn_key),
               obscured: true,
             ),
-            InkWell(
-              child: Text("Crie sua conta"),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => RegisterPage(
-                            title: "Testando mudança de título!",
-                            key: Key("Register"),
-                          ))),
+            ElevatedButton(
+              onPressed: () {
+                print('Received click');
+              },
+              child: const Text('Entrar :D'),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: InkWell(
+                child: Text(
+                  "Crie sua conta",
+                  style: TextStyle(color: Colors.orange),
+                ),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RegisterPage(
+                              title: "Cadastro - Mooney",
+                            ))),
+              ),
             )
           ],
         ),
