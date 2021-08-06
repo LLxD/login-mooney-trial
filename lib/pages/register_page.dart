@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/components/input.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({Key? key, required this.title}) : super(key: key);
@@ -36,7 +37,13 @@ class RegisterPage extends StatelessWidget {
               icon: Icon(Icons.check),
               obscured: true,
             ),
-            ElevatedButton(
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              height: 40.0,
+              minWidth: 270.0,
+              color: Theme.of(context).primaryColor,
               onPressed: () {
                 print('Received click');
               },

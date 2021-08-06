@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login/components/input.dart';
 import 'package:login/pages/register_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+FirebaseAuth auth = FirebaseAuth.instance;
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key, required this.title}) : super(key: key);
@@ -28,11 +31,17 @@ class LoginPage extends StatelessWidget {
               icon: Icon(Icons.vpn_key),
               obscured: true,
             ),
-            ElevatedButton(
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              height: 40.0,
+              minWidth: 270.0,
+              color: Theme.of(context).primaryColor,
               onPressed: () {
                 print('Received click');
               },
-              child: const Text('Entrar :D'),
+              child: Text('Entrar :D'),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
