@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/components/input.dart';
 import 'package:login/pages/sign_up_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
-final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key, required this.title}) : super(key: key);
@@ -35,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: <Widget>[
               Input(
                 controller: _nameInputController,
-                label: "Username",
+                label: "Nome de Usuário",
                 icon: Icon(Icons.person),
                 obscured: false,
               ),
@@ -47,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               Input(
                 controller: _passwordInputController,
-                label: "Password",
+                label: "Senha",
                 icon: Icon(Icons.vpn_key),
                 obscured: true,
               ),
@@ -59,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   }
                   return null;
                 },
-                label: "Confirm Password",
+                label: "Confirme sua senha",
                 icon: Icon(Icons.check),
                 obscured: true,
               ),

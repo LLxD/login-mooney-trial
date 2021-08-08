@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:login/routes.dart';
+import 'package:http/http.dart' as http;
 
-class SignUpService {
-  signUp(String email, String password) async {
+class LoginService {
+  login(String email, String password) async {
     http.Response response = await http.post(
-      Uri.parse(Routes().signUp()),
+      Uri.parse(Routes().signIn()),
       body: json.encode(
         {
           "email": email,
@@ -15,6 +15,7 @@ class SignUpService {
       ),
     );
 
-    print(response.body);
+    print(json.decode(response.body));
+    return (json.decode(response.body));
   }
 }
