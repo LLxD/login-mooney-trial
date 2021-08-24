@@ -1,8 +1,10 @@
+require('dotenv/config');
+
 class Routes {
   static const String authService =
       "https://identitytoolkit.googleapis.com/v1/";
 
-  static const String apiKey = "AIzaSyB0J5PZgsjniUU3GGYF63AoivB4LDdSLpw";
+  static const String apiKey = process.env.SECRET_API;
 
   String signIn() {
     return authService + "accounts:signInWithPassword?key=" + apiKey;
